@@ -1,0 +1,107 @@
+.navbar {
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    transition: top 0.8s;
+}
+
+/* Stylize the navbar when it has the "active" class */
+.navbar.active {
+    border-bottom: 2px solid #000;
+    background-color: #000;
+    border: #000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    max-width: 1500px;
+}
+
+.logo {
+    color: rgb(0, 0, 0);
+    justify-self: start;
+    letter-spacing: 15px;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+/* Stylize the logo when it has the "active" class */
+.logo.active {
+    color: rgb(255, 255, 0);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+/* Add responsive styling for nav-menu to show it as a dropdown on mobile */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: #000;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navbar.active .nav-menu {
+        display: flex;
+    }
+}
+
+.nav-item {
+    height: auto;
+}
+
+.nav-links {
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+}
+
+/* Add a bottom border when hovering over the links */
+.nav-links:hover {
+    border-bottom: 2px solid yellow;
+    transition: all 0.2s ease-out;
+}
+
+/* Video Background */
+.main {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Mencegah tampilan video melebihi kontainer */
+    position: relative; /* Penting agar video bisa bersanding dengan elemen lainnya */
+  }
+  
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute; /* Penting agar video bisa bersanding dengan elemen lainnya */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Menempatkan video di belakang elemen lain, seperti navbar */
+  }
